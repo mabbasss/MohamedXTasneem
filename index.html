@@ -693,14 +693,24 @@
 
 <script>
   // ══════════ ENVELOPE ══════════
+  // Always start at the top, even after a refresh (browsers restore scroll otherwise)
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  window.scrollTo(0, 0);
+
   function openEnvelope() {
     const env = document.getElementById('envelope');
     env.classList.add('opening');
+
+    // Start music IMMEDIATELY inside the click handler.
+    // Browsers only permit audio during a real user gesture — calling
+    // play() later (inside setTimeout) gets blocked on Safari/iOS.
+    startMusic();
+
     setTimeout(() => {
       document.getElementById('envelope-screen').classList.add('opened');
       document.body.classList.remove('locked');
+      window.scrollTo(0, 0);
       showMusicBtn();
-      tryAutoStart();
     }, 1400);
   }
 
@@ -823,7 +833,6 @@
   // ══════════ MUSIC TOGGLE ══════════
   const music = document.getElementById('bg-music');
   const musicBtn = document.getElementById('music-toggle');
-  let musicStarted = false;
 
   function showMusicBtn() { musicBtn.classList.add('ready'); }
 
@@ -841,12 +850,15 @@
     }
   }
 
-  // Try to start music the first time the guest interacts (browsers block autoplay)
-  function tryAutoStart() {
-    if (musicStarted) return;
-    musicStarted = true;
+  // Start (or restart) the music from the beginning
+  function startMusic() {
     music.volume = 0.4;
-    music.play().then(() => musicBtn.classList.add('playing')).catch(() => {});
+    music.currentTime = 0;
+    const p = music.play();
+    if (p && p.then) {
+      p.then(() => musicBtn.classList.add('playing'))
+       .catch(() => { /* blocked or no file — guest can tap the button */ });
+    }
   }
 
   // ══════════ WISHES WALL ══════════
