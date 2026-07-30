@@ -23,7 +23,7 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Lato:wght@300;400&family=Tangerine:wght@400;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Luxurious+Script&family=Lato:wght@300;400&family=Tangerine:wght@400;700&display=swap" rel="stylesheet" />
     <style>
     :root {
       --gold: #b89a5a;
@@ -192,7 +192,6 @@
       position: absolute;
       inset: -16px;
       background: var(--cover-bg-image) top center / cover no-repeat;
-      filter: blur(1px);
       transform: scale(1.05);
       z-index: 0;
     }
@@ -218,23 +217,27 @@
 
     .cover-eyebrow {
       font-size: 0.7rem; letter-spacing: 0.35em; text-transform: uppercase;
-      color: var(--sage-deep); margin-bottom: 1.5rem;
+      color: #000; margin-bottom: 1.5rem;
+      font-weight: 600;
       opacity: 0; animation: fadeUp 1.2s ease 0.3s forwards;
     }
     .cover-together {
       font-family: 'Cormorant Garamond', serif; font-style: italic;
-      font-size: 1rem; color: var(--mid); margin-bottom: 0.5rem;
+      font-size: 1rem; color: #000; margin-bottom: 0.5rem;
+      font-weight: 500;
       opacity: 0; animation: fadeUp 1.2s ease 0.5s forwards;
     }
     .cover-names {
-      font-family: 'Tangerine', cursive; font-weight: 700;
-      font-size: clamp(4.5rem, 16vw, 9rem); color: var(--dark); line-height: 0.9;
+      font-family: 'Luxurious Script', cursive; font-weight: 400;
+      font-size: clamp(4.5rem, 16vw, 9rem); color: #000; line-height: 0.9;
+      margin-top: 1rem;
       opacity: 0; animation: fadeUp 1.2s ease 0.7s forwards;
     }
-    .cover-names .amp { color: var(--gold); display: block; font-size: 0.7em; margin: -0.1em 0; }
+    .cover-names .amp { color: #000; display: block; font-size: 0.7em; margin: -0.1em 0; }
     .cover-date {
       font-size: 0.8rem; letter-spacing: 0.25em; text-transform: uppercase;
-      color: var(--sage-deep); margin-top: 2rem;
+      color: #000; margin-top: 2rem;
+      font-weight: 600;
       opacity: 0; animation: fadeUp 1.2s ease 0.9s forwards;
     }
 
@@ -243,14 +246,15 @@
       display: flex; flex-direction: column; align-items: center; gap: 6px;
       opacity: 0; animation: fadeIn 1s ease 1.8s forwards; cursor: pointer; z-index: 2;
     }
-    .cover-scroll span { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
-    .scroll-line { width: 1px; height: 40px; background: linear-gradient(to bottom, var(--gold), transparent); animation: scrollPulse 2s ease-in-out infinite; }
+    .cover-scroll span { font-size: 1.8rem; letter-spacing: 0.08em; text-transform: uppercase; color: #000; line-height: 1; }
+    .scroll-line { width: 1px; height: 40px; background: linear-gradient(to bottom, #000, transparent); animation: scrollPulse 2s ease-in-out infinite; }
 
     /* ══════════ SECTIONS ══════════ */
     section { padding: 6rem 1.5rem; text-align: center; position: relative; }
     .section-eyebrow { font-size: 0.65rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.25rem; display: block; }
     .section-title { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: clamp(2rem, 5vw, 3rem); color: var(--dark); line-height: 1.2; margin-bottom: 1rem; }
     .section-body { font-size: 0.9rem; font-weight: 300; color: var(--muted); line-height: 1.9; max-width: 480px; margin: 0 auto; }
+    .friendly-note { margin-top: 0.9rem; font-size: 0.82rem; color: var(--mid); font-style: italic; }
 
     .floral-divider { display: flex; align-items: center; justify-content: center; gap: 0.75rem; max-width: 340px; margin: 2.5rem auto; }
     .floral-divider .line { flex: 1; height: 0.5px; background: var(--gold); opacity: 0.4; }
@@ -346,7 +350,7 @@
 
     /* ══════════ FOOTER ══════════ */
     footer { background: linear-gradient(160deg, #2e2820, #1a1612); text-align: center; padding: 4rem 1.5rem; color: var(--muted); font-size: 0.75rem; font-weight: 300; letter-spacing: 0.1em; }
-    footer .footer-names { font-family: 'Tangerine', cursive; font-weight: 700; font-size: 3rem; color: var(--gold-light); margin-bottom: 0.5rem; }
+    footer .footer-names { font-family: 'Luxurious Script', cursive; font-weight: 400; font-size: 3rem; color: var(--gold-light); margin-bottom: 0.5rem; }
     footer a { color: var(--gold); text-decoration: none; }
 
     /* ══════════ REVEAL ══════════ */
@@ -506,7 +510,7 @@
 
         <div class="cover-content">
             <div class="cover-eyebrow">Together with their families</div>
-            <div class="cover-together">we invite you to celebrate the wedding of</div>
+            <div class="cover-together">we invite you to celebrate our wedding</div>
             <div class="cover-names">
                 Mohamed
                 <span class="amp">&amp;</span>
@@ -526,7 +530,7 @@
         <div class="reveal">
             <span class="section-eyebrow">Our Story</span>
             <h2 class="section-title">Two hearts, one journey</h2>
-            <p class="section-body">With hearts full of joy and gratitude to Allah, we invite you to share in the beginning of our forever. Your presence will make our day complete.</p>
+            <p class="section-body">With joyful hearts and deep gratitude to Allah, we are so happy to invite you to celebrate the beginning of our forever. Having you with us would make our day even more special.</p>
         </div>
         <div class="floral-divider reveal">
             <div class="line"></div>
@@ -582,8 +586,8 @@
                 </div>
                 <div class="detail-text">
                     <span class="detail-cell-label">Time</span>
-                    <div class="detail-cell-value">5:30 PM</div>
-                    <div class="detail-cell-sub">Arrive between 5:30 – 6:00</div>
+                    <div class="detail-cell-value">5:00 PM</div>
+                    <div class="detail-cell-sub">Arrive between 4:30 – 5:00</div>
                 </div>
             </div>
             <div class="detail-cell">
@@ -650,58 +654,22 @@
         <div class="gallery-grid reveal">
             <!-- Replace each placeholder with: <img src="photos/1.jpg" alt="" /> -->
             <div class="gallery-item">
-                <div class="photo-placeholder">
-                    <svg class="ph-icon" width="28" height="28" viewBox="0 0 40 40" fill="none">
-                        <rect x="6" y="10" width="28" height="22" rx="2" stroke="#b89a5a" stroke-width="1.2" />
-                        <circle cx="20" cy="21" r="6" stroke="#b89a5a" stroke-width="1.2" />
-                    </svg>
-                    <span class="ph-text">Photo 1</span>
-                </div>
+                <img src="pic1.jpeg" alt="pic1" />
             </div>
             <div class="gallery-item">
-                <div class="photo-placeholder">
-                    <svg class="ph-icon" width="28" height="28" viewBox="0 0 40 40" fill="none">
-                        <rect x="6" y="10" width="28" height="22" rx="2" stroke="#b89a5a" stroke-width="1.2" />
-                        <circle cx="20" cy="21" r="6" stroke="#b89a5a" stroke-width="1.2" />
-                    </svg>
-                    <span class="ph-text">Photo 2</span>
-                </div>
+                <img src="pic2.jpeg" alt="pic2" />
             </div>
             <div class="gallery-item">
-                <div class="photo-placeholder">
-                    <svg class="ph-icon" width="28" height="28" viewBox="0 0 40 40" fill="none">
-                        <rect x="6" y="10" width="28" height="22" rx="2" stroke="#b89a5a" stroke-width="1.2" />
-                        <circle cx="20" cy="21" r="6" stroke="#b89a5a" stroke-width="1.2" />
-                    </svg>
-                    <span class="ph-text">Photo 3</span>
-                </div>
+                <img src="pic3.jpeg" alt="pic3" />
             </div>
             <div class="gallery-item">
-                <div class="photo-placeholder">
-                    <svg class="ph-icon" width="28" height="28" viewBox="0 0 40 40" fill="none">
-                        <rect x="6" y="10" width="28" height="22" rx="2" stroke="#b89a5a" stroke-width="1.2" />
-                        <circle cx="20" cy="21" r="6" stroke="#b89a5a" stroke-width="1.2" />
-                    </svg>
-                    <span class="ph-text">Photo 4</span>
-                </div>
+                <img src="pic4.jpg" alt="pic4" />
             </div>
             <div class="gallery-item">
-                <div class="photo-placeholder">
-                    <svg class="ph-icon" width="28" height="28" viewBox="0 0 40 40" fill="none">
-                        <rect x="6" y="10" width="28" height="22" rx="2" stroke="#b89a5a" stroke-width="1.2" />
-                        <circle cx="20" cy="21" r="6" stroke="#b89a5a" stroke-width="1.2" />
-                    </svg>
-                    <span class="ph-text">Photo 5</span>
-                </div>
+                <img src="pic5.jpg" alt="pic5" />
             </div>
             <div class="gallery-item">
-                <div class="photo-placeholder">
-                    <svg class="ph-icon" width="28" height="28" viewBox="0 0 40 40" fill="none">
-                        <rect x="6" y="10" width="28" height="22" rx="2" stroke="#b89a5a" stroke-width="1.2" />
-                        <circle cx="20" cy="21" r="6" stroke="#b89a5a" stroke-width="1.2" />
-                    </svg>
-                    <span class="ph-text">Photo 6</span>
-                </div>
+                <img src="pic6.jpg" alt="pic6" />
             </div>
         </div>
     </section>
@@ -729,9 +697,10 @@
     <!-- ══════════ RSVP ══════════ -->
     <section id="rsvp">
         <div class="reveal">
-            <span class="section-eyebrow">Kindly reply by 10 September 2026</span>
+            <span class="section-eyebrow">Kindly reply by the 1st of September 2026</span>
             <h2 class="section-title">Will you join us?</h2>
             <p class="section-body">Please let us know so we can prepare well. Your response means everything to us.</p>
+            <p class="section-body friendly-note">With love and appreciation, we are keeping the evening as an intimate celebration, while wishing the little ones a cozy night and sweet dreams. Thank you so much for your understanding.</p>
         </div>
         <div class="rsvp-wrap reveal">
             <div class="rsvp-form" id="rsvp-form-el">
@@ -853,7 +822,7 @@
 
   // ══════════ COUNTDOWN ══════════
   // Year, Month(0-indexed: 8 = September), Day, Hour, Minute
-  const eventDate = new Date(2026, 8, 25, 19, 0, 0);
+  const eventDate = new Date(2026, 8, 25, 17, 0, 0);
   function tick() {
     const boxes = document.getElementById('countdown-boxes');
     if (!boxes) return;
